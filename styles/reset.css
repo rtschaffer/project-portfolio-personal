@@ -1,0 +1,558 @@
+/* RT StudioWorks project by Richard T. Schaffer
+© 2025 by Richard T Schaffer licensed under MIT License.
+102627152+rtschaffer@users.noreply.github.com
+____________________________________________________________
+ABOUT:
+Personal Portfolio Project - Home Page
+
+* Title: Stylesheet - Reset
+* Project: Personal Portfolio Project
+* Subject: Stylesheet Reset
+* Category: Stylesheet
+* Keywords: reset, css, stylesheet
+* Author: Richard T. Schaffer
+* version: 1.0.0
+* Created: 2024-06-01
+* Updated: 2024-06-01
+____________________________________________________________
+LICENSE AND CREDITS:
+* All credit to the respective owners of referenced works, authors and sources.
+* This work is licensed under MIT License. To view a copy of this license, visit https://mit-license.org
+    attribution block for copy: (don't forget to replace [title] including brackets)
+        "RT StudioWorks:[title]" by Richard T. Schaffer, used under the MIT License.
+* Where applicable, third party components are licensed under their own licenses, credit to respective owners.
+____________________________________________________________
+USAGE:
+Load Order:
+    1. variables.css
+    2. reset.css (this file)
+    3. layout.css
+    4. elements.css
+    5. main.css
+
+    This reset stylesheet provides:
+        1. Consistent box-sizing across all elements
+        2. Removal of default margins and padding
+        3. Normalization of form elements
+        4. Consistent typography baseline
+        5. Removal of browser-specific styling
+        6. Modern defaults for HTML5 elements
+        7. Accessibility improvements
+        8. Print media optimization
+    
+    Based on modern reset practices combining:
+        - Meyer Reset concepts
+        - Normalize.css principles
+        - Modern CSS best practices
+============================================================ */
+
+/* === box model reset ===================================== #region'1'# */
+
+/* Universal box-sizing with inheritance */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scrolling for modern browsers */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape on iOS */
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* ___ end - box model reset _______________________________ #endregion'1'# */
+
+/* === Document & Body Defaults ============================ #region'2'# */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; /* Better font rendering on macOS/iOS */
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ___ end - Document & Body Defaults ______________________ #endregion'2'# */
+
+/* === HTML5 Display Definitions =========================== #region'3'# */
+
+/* Ensure HTML5 semantic elements display correctly in older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* Summary element cursor */
+summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+/* Template and hidden elements */
+template,
+[hidden] {
+  display: none;
+}
+
+/* ___ end - HTML5 Display Definitions _____________________ #endregion'3'# */
+
+/* === box Typography Reset ================================ #region'4'# */
+
+* Remove default margins from headings and paragraphs */
+h1, h2, h3, h4, h5, h6,
+p,
+blockquote,
+pre,
+dl, dd,
+ol, ul,
+figure,
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+/* Reset heading font sizes to inherit */
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Normalize list styles */
+ol, ul {
+  list-style: none;
+}
+
+/* Preserve list semantics for screen readers */
+ol[role="list"],
+ul[role="list"] {
+  list-style: none;
+}
+
+/* Blockquote normalization */
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
+  content: none;
+}
+
+/* Preformatted text */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* Correct font inheritance */
+  font-size: 1em; /* Normalize font size */
+}
+
+/* Small text */
+small {
+  font-size: 80%;
+}
+
+/* Subscript and superscript */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* ___ end - Typography Reset ______________________________ #endregion'4'# */
+
+/* === box Links =========================================== #region'5'# */
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+    background-color: transparent; /* Remove gray background in IE 10 */
+  }
+  
+  /* Remove outline on focused links */
+  a:focus {
+    outline: thin dotted;
+  }
+  
+  /* Improve readability of focused links */
+  a:active,
+  a:hover {
+    outline: 0;
+  }
+
+/* ___ end - Links _________________________________________ #endregion'5'# */
+
+/* === Embedded Content ==================================== #region'6'# */
+
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Remove border on images inside links in IE 10 */
+img {
+  border-style: none;
+}
+
+/* SVG normalization */
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+/* Audio/Video elements */
+audio,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* ___ end - Embedded Content ______________________________ #endregion'6'# */
+
+/* === box Forms =========================================== #region'7'# */
+
+* Form element normalization */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+/* Button and input normalization */
+button,
+input {
+  overflow: visible; /* Show overflow in IE */
+}
+
+button,
+select {
+  text-transform: none; /* Remove inheritance of text transform in Edge/Firefox */
+}
+
+/* Clickable types */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; /* Correct appearance in iOS/Safari */
+  cursor: pointer;
+}
+
+/* Remove inner border and padding in Firefox */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/* Restore focus styles */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/* Disabled button cursor */
+button:disabled,
+[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Fieldset normalization */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Legend normalization */
+legend {
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  color: inherit;
+  white-space: normal;
+}
+
+/* Progress bar normalization */
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* Textarea normalization */
+textarea {
+  overflow: auto; /* Remove default vertical scrollbar in IE */
+  resize: vertical; /* Only allow vertical resizing */
+}
+
+/* Checkbox and radio normalization */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Number input spin buttons */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* Search input normalization */
+[type="search"] {
+  -webkit-appearance: textfield; /* Correct appearance in Chrome/Safari */
+  outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* File upload button */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+/* ___ end - box Forms _____________________________________ #endregion'7'# */
+
+/* === Tables ============================================== #region'8'# */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+  }
+  
+  td,
+  th {
+    padding: 0;
+    text-align: left;
+  }
+
+/* ___ end - Tables ________________________________________ #endregion'8'# */
+
+/* === Interactive Elements ================================ #region'9'# */
+
+/* Details element */
+details {
+  display: block;
+}
+
+/* Dialog element */
+dialog {
+  background-color: white;
+  border: solid;
+  color: black;
+  display: block;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: fit-content;
+}
+
+dialog:not([open]) {
+  display: none;
+}
+
+/* ___ end - Interactive Elements __________________________ #endregion'9'# */
+
+/* === Accessibility  ====================================== #region'1'# */
+
+/* Remove all animations/transitions for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Focus visible for keyboard navigation */
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* ___ end - Accessibility  ________________________________ #endregion'10'# */
+
+/* === Print Styles ======================================== #region'11'# */
+
+@media print {
+    *,
+    *::before,
+    *::after {
+      background: transparent !important;
+      color: #000 !important; /* Black prints faster */
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+  
+    a,
+    a:visited {
+      text-decoration: underline;
+    }
+  
+    a[href]::after {
+      content: " (" attr(href) ")";
+    }
+  
+    abbr[title]::after {
+      content: " (" attr(title) ")";
+    }
+  
+    /* Don't show links for fragments or JavaScript */
+    a[href^="#"]::after,
+    a[href^="javascript:"]::after {
+      content: "";
+    }
+  
+    pre,
+    blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+    }
+  
+    thead {
+      display: table-header-group;
+    }
+  
+    tr,
+    img {
+      page-break-inside: avoid;
+    }
+  
+    img {
+      max-width: 100% !important;
+    }
+  
+    p,
+    h2,
+    h3 {
+      orphans: 3;
+      widows: 3;
+    }
+  
+    h2,
+    h3 {
+      page-break-after: avoid;
+    }
+}
+
+/* ___ end - Print Styles __________________________________ #endregion'11'# */
+
+/* === Utility Classes ===================================== #region'1'# */
+
+/* Clearfix for float layouts (legacy support) */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Visually hidden but accessible */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* ___ end - Utility Classes _______________________________ #endregion'12'# */

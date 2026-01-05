@@ -1,0 +1,83 @@
+/* RT StudioWorks project by Richard T. Schaffer
+© 2025 by Richard T Schaffer licensed under MIT License.
+102627152+rtschaffer@users.noreply.github.com
+____________________________________________________________
+ABOUT:
+Personal Portfolio Project - Home Page
+
+* Title: Stylesheet - Elements
+* Project: Personal Portfolio Project
+* Subject: Stylesheet Elements
+* Category: Stylesheet
+* Keywords: elements, css, stylesheet
+* Author: Richard T. Schaffer
+* version: 1.0.0
+* Created: 2024-06-01
+* Updated: 2024-06-01
+____________________________________________________________
+LICENSE AND CREDITS:
+* All credit to the respective owners of referenced works, authors and sources.
+* This work is licensed under MIT License. To view a copy of this license, visit https://mit-license.org
+    attribution block for copy: (don't forget to replace [title] including brackets)
+        "RT StudioWorks:[title]" by Richard T. Schaffer, used under the MIT License.
+* Where applicable, third party components are licensed under their own licenses, credit to respective owners.
+____________________________________________________________
+USAGE:
+Load Order:
+    1. variables.css (this file) - MUST load first
+    2. reset.css
+    3. layout.css
+    4. elements.css
+    5. main.css
+    
+All other stylesheets reference these variables via var(--variable-name)
+============================================================ */
+
+/* === element styles ===================================== #region'1'# */
+
+/* --- Buttons --- */
+
+header nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-contrast);
+    box-shadow: var(--layout-shadow);
+    height: 80%;
+    margin-bottom: var(--layout-section-spacing);
+    padding: var(--layout-padding);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: var(--layout-padding);
+    margin: var(--layout-margin);
+    background-color: var(--color-gray-200);
+    border-radius: var(--radius-md);
+    box-shadow: var(--layout-shadow);
+}
+
+header nav li {
+    padding: var(--layout-padding);
+    background-color: var(--color-gray-300);
+    color: orange;
+    font-family: var(--font-family-nav);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;    
+    text-shadow: 1px 1px 2px orangered;
+    border-radius: var(--radius-md);
+    box-shadow: var(--layout-shadow);
+}
+
+header nav li :hover {
+    background-color: var(--color-gray-100);
+    color: orangered;
+    text-shadow: 1px 1px 2px red, 1px 1px 5px orange;
+}
+

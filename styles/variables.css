@@ -1,0 +1,205 @@
+/* RT StudioWorks project by Richard T. Schaffer
+© 2025 by Richard T Schaffer licensed under MIT License.
+102627152+rtschaffer@users.noreply.github.com
+____________________________________________________________
+ABOUT:
+Personal Portfolio Project - Home Page
+
+* Title: Stylesheet - Variables
+* Project: Personal Portfolio Project
+* Subject: Stylesheet Variables
+* Category: Stylesheet
+* Keywords: variables, css, stylesheet
+* Author: Richard T. Schaffer
+* version: 1.0.0
+* Created: 2024-06-01
+* Updated: 2024-06-01
+____________________________________________________________
+LICENSE AND CREDITS:
+* All credit to the respective owners of referenced works, authors and sources.
+* This work is licensed under MIT License. To view a copy of this license, visit https://mit-license.org
+    attribution block for copy: (don't forget to replace [title] including brackets)
+        "RT StudioWorks:[title]" by Richard T. Schaffer, used under the MIT License.
+* Where applicable, third party components are licensed under their own licenses, credit to respective owners.
+____________________________________________________________
+USAGE:
+Load Order:
+    1. variables.css (this file) - MUST load first
+    2. reset.css
+    3. layout.css
+    4. elements.css
+    5. main.css
+    
+All other stylesheets reference these variables via var(--variable-name)
+============================================================ */
+
+/* === color palette ======================================= #region'1'# */
+:root {
+
+  /* --- Brand Colors --- */
+  --color-primary: #2196f3;          /* Primary brand color (blue) */
+  --color-primary-light: #64b5f6;    /* Lighter primary */
+  --color-primary-dark: #1976d2;     /* Darker primary */
+  --color-primary-contrast: #ffffff; /* Text on primary color */
+  
+  --color-secondary: #ff9800;        /* Secondary brand color (orange) */
+  --color-secondary-light: #ffb74d;  /* Lighter secondary */
+  --color-secondary-dark: #f57c00;   /* Darker secondary */
+  --color-secondary-contrast: #ffffff; /* Text on secondary color */
+  
+  --color-accent: #4caf50;           /* Accent color (green) */
+  --color-accent-light: #81c784;     /* Lighter accent */
+  --color-accent-dark: #388e3c;      /* Darker accent */
+  
+  /* --- Neutral Colors - Grays --- */
+  --color-gray-50: #fafafa;          /* Lightest gray */
+  --color-gray-100: #f5f5f5;         /* Very light gray */
+  --color-gray-200: #eeeeee;         /* Light gray */
+  --color-gray-300: #e0e0e0;         /* Medium-light gray */
+  --color-gray-400: #bdbdbd;         /* Medium gray */
+  --color-gray-500: #9e9e9e;         /* True medium gray */
+  --color-gray-600: #757575;         /* Medium-dark gray */
+  --color-gray-700: #616161;         /* Dark gray */
+  --color-gray-800: #424242;         /* Very dark gray */
+  --color-gray-900: #212121;         /* Almost black */
+  
+  /* --- Semantic Colors --- */
+  --color-success: #4caf50;          /* Success state (green) */
+  --color-warning: #ff9800;          /* Warning state (orange) */
+  --color-danger: #f44336;           /* Danger/error state (red) */
+  --color-info: #2196f3;             /* Info state (blue) */
+  
+  /* --- Background Colors --- */
+  --color-bg-body: #ffffff;          /* Main body background */
+  --color-bg-alt: #f5f5f5;           /* Alternate background (sections) */
+  --color-bg-overlay: rgba(0, 0, 0, 0.5); /* Overlay/modal background */
+  
+  /* --- Text Colors --- */
+  --color-text-primary: #212121;     /* Primary text color */
+  --color-text-secondary: #757575;   /* Secondary text (less emphasis) */
+  --color-text-muted: #9e9e9e;       /* Muted text (hints, placeholders) */
+  --color-text-inverse: #ffffff;     /* Text on dark backgrounds */
+  
+  /* --- Border Colors --- */
+  --color-border-light: #e0e0e0;     /* Light borders */
+  --color-border-medium: #bdbdbd;    /* Medium borders */
+  --color-border-dark: #757575;      /* Dark borders */
+  
+  /* --- Link Colors --- */
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-primary-dark);
+  --color-link-visited: #9c27b0;     /* Purple for visited links */
+  
+  /* --- Shadow Colors --- */
+  --color-shadow-light: rgba(0, 0, 0, 0.08);
+  --color-shadow-medium: rgba(0, 0, 0, 0.15);
+  --color-shadow-dark: rgba(0, 0, 0, 0.3);
+}
+/* ___ end - color palette _________________________________ #endregion'1'# */
+
+/* === typography ========================================== #region'2'# */
+:root {
+
+/* --- Font Families --- */
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-serif: Georgia, "Times New Roman", Times, serif;
+  --font-family-mono: "Courier New", Courier, monospace;
+  --font-family-base: var(--font-family-sans);
+
+  --font-family-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-family-body: var(--font-family-sans);
+  --font-family-footer: var(--font-family-mono);
+  --font-family-nav: var(--font-family-sans);
+  
+  /* --- Font Sizes - Type Scale (1.250 - Major Third) --- */
+  --font-size-xs: 0.64rem;           /* 10.24px - extra small */
+  --font-size-sm: 0.8rem;            /* 12.8px - small */
+  --font-size-base: 1rem;            /* 16px - base */
+  --font-size-md: 1.25rem;           /* 20px - medium */
+  --font-size-lg: 1.563rem;          /* 25px - large */
+  --font-size-xl: 1.953rem;          /* 31.25px - extra large */
+  --font-size-2xl: 2.441rem;         /* 39px - 2x large */
+  --font-size-3xl: 3.052rem;         /* 48.8px - 3x large */
+  
+  /* --- Font Weights --- */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+  
+  /* --- Line Heights --- */
+  --line-height-tight: 1.2;          /* Headings */
+  --line-height-normal: 1.5;         /* Body text */
+  --line-height-relaxed: 1.75;       /* Comfortable reading */
+  --line-height-loose: 2;            /* Very spaced */
+  
+  /* --- Letter Spacing --- */
+  --letter-spacing-tight: -0.05em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
+  --letter-spacing-wider: 0.1em;
+
+}
+/* ___ end - typography ____________________________________ #endregion'2'# */
+
+/* === spacing - sizing ==================================== #region'3'# */
+:root {
+
+    /* --- Based on 8px grid system --- */
+    --space-0: 0;
+    --space-1: 0.25rem;                /* 4px */
+    --space-2: 0.5rem;                 /* 8px */
+    --space-3: 0.75rem;                /* 12px */
+    --space-4: 1rem;                   /* 16px */
+    --space-5: 1.5rem;                 /* 24px */
+    --space-6: 2rem;                   /* 32px */
+    --space-7: 3rem;                   /* 48px */
+    --space-8: 4rem;                   /* 64px */
+    --space-9: 6rem;                   /* 96px */
+    --space-10: 8rem;                  /* 128px */
+    
+    /* --- Common Spacing Shortcuts --- */
+    --space-xs: var(--space-1);
+    --space-sm: var(--space-2);
+    --space-md: var(--space-4);
+    --space-lg: var(--space-6);
+    --space-xl: var(--space-8);
+    
+    /* --- Border Radius --- */
+    --radius-none: 0;
+    --radius-sm: 0.125rem;             /* 2px */
+    --radius-md: 0.25rem;              /* 4px */
+    --radius-lg: 0.5rem;               /* 8px */
+    --radius-xl: 1rem;                 /* 16px */
+    --radius-2xl: 1.5rem;              /* 24px */
+    --radius-full: 9999px;             /* Circular */
+    
+    /* --- Shadows --- */
+    --shadow-xs: 0 1px 2px 0 var(--color-shadow-light);
+    --shadow-sm: 0 1px 3px 0 var(--color-shadow-light), 0 1px 2px 0 var(--color-shadow-light);
+    --shadow-md: 0 4px 6px -1px var(--color-shadow-light), 0 2px 4px -1px var(--color-shadow-light);
+    --shadow-lg: 0 10px 15px -3px var(--color-shadow-medium), 0 4px 6px -2px var(--color-shadow-light);
+    --shadow-xl: 0 20px 25px -5px var(--color-shadow-medium), 0 10px 10px -5px var(--color-shadow-light);
+    --shadow-2xl: 0 25px 50px -12px var(--color-shadow-dark);
+    --shadow-inner: inset 0 2px 4px 0 var(--color-shadow-light);
+    --shadow-none: none;
+    
+    /* --- Z-Index Layers --- */
+    --z-index-dropdown: 1000;
+    --z-index-sticky: 1020;
+    --z-index-fixed: 1030;
+    --z-index-modal-backdrop: 1040;
+    --z-index-modal: 1050;
+    --z-index-popover: 1060;
+    --z-index-tooltip: 1070;
+    
+    /* --- Transitions --- */
+    --transition-fast: 150ms ease-in-out;
+    --transition-base: 200ms ease-in-out;
+    --transition-slow: 300ms ease-in-out;
+    --transition-slower: 500ms ease-in-out;
+}
+
+/* ___ end - spacing - sizing ______________________________ #endregion'3'# */

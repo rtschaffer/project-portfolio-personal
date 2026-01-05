@@ -1,0 +1,182 @@
+/* RT StudioWorks project by Richard T. Schaffer
+© 2025 by Richard T Schaffer licensed under MIT License.
+102627152+rtschaffer@users.noreply.github.com
+____________________________________________________________
+ABOUT:
+Personal Portfolio Project - Home Page
+
+* Title: Stylesheet - Layout
+* Project: key_docProject
+* Subject: Stylesheet Layout
+* Category: Stylesheet
+* Keywords: layout, css, stylesheet
+* Author: Richard T. Schaffer
+* version: 1.0.0
+* Created: 2024-06-01
+* Updated: 2024-06-01
+____________________________________________________________
+LICENSE AND CREDITS:
+* All credit to the respective owners of referenced works, authors and sources.
+* This work is licensed under MIT License. To view a copy of this license, visit https://mit-license.org
+    attribution block for copy: (don't forget to replace [title] including brackets)
+        "RT StudioWorks:[title]" by Richard T. Schaffer, used under the MIT License.
+* Where applicable, third party components are licensed under their own licenses, credit to respective owners.
+____________________________________________________________
+USAGE:
+Load Order:
+    1. variables.css (this file) - MUST load first
+    2. reset.css
+    3. layout.css
+    4. elements.css
+    5. main.css
+
+LAYOUT:_____________________________________________
+    Width notes:
+        - body width: minmax; 500px   1600px
+        - variant widths for responsive design:
+            - full body:        full    narrow
+                - total:     1600px   1200px
+            - less sidebar:
+                - total:     1200px   850px
+            - main only:        850px   500px
+
+Semantic Layout Structure:
+    <header>        - site header
+    <nav>           - primary navigation
+    <sidebar>       - secondary navigation
+    <aside>         - sidebar
+    <main>          - main content area
+    <footer>        - site footer
+============================================================ */
+
+/* === layout variables ==================================== #region'1'# */
+
+:root {
+
+/* --- sizing --- */
+    --layout-max-width: 1200px;         /* Maxi width */
+    --layout-header-height: 80px;       /* header height */
+    --layout-footer-height: 60px;       /* footer height */
+    --layout-banner-height: 300px;      /* banner height */
+
+/* --- spacing --- */
+    --layout-margin: 5px;              /* body margin */
+    --layout-padding: 5px;             /* body padding */
+    --layout-section-spacing: 5px;     /* section spacing */
+
+/* --- shadows --- */
+    --layout-shadow: 0 1px 3px 0 var(--color-shadow-light), 0 1px 2px 0 var(--color-shadow-light)
+
+}
+
+/* ___ end - layout variables ______________________________ #endregion'1'# */
+
+/* === layout ============================================== #region'1'# */
+
+/* --- Primary Layout --- */
+
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100%;
+    max-width: var(--layout-max-width);
+    box-sizing: border-box;
+    margin: var(--layout-margin);
+    padding: var(--layout-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-family-body);
+    background-color: var(--color-bg-body);
+    color: var(--color-text-primary);
+}
+
+header {
+    width: 100%;
+    height: var(--layout-header-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    color: var(--color-primary-contrast);
+    box-shadow: var(--layout-shadow);
+}
+
+footer {
+    width: 100%;
+    height: var(--layout-footer-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary-dark);
+    color: var(--color-primary-contrast);
+    box-shadow: var(--layout-shadow);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--color-primary-light);
+    color: var(--color-text-primary);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border-light);
+    padding: var(--layout-padding);
+    box-shadow: var(--layout-shadow);
+    margin: var(--layout-section-spacing) 0;
+}
+
+.banner {
+    width: 100%;
+    height: var(--layout-banner-height);
+    background-color: var(--color-accent);
+    color: var(--color-primary-contrast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--layout-shadow);
+    margin-bottom: var(--layout-section-spacing);
+}
+
+header .branding {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header .main {
+    font-size: 1.2rem;
+    margin-left: 20px;
+}
+
+main .content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    font-size: 1rem;
+    line-height: var(--line-height-normal);
+    color: var(--color-text-primary);
+}
+
+ .project {
+    flex: 1;
+    height: 200px;
+    margin-bottom: var(--layout-section-spacing);
+    padding: var(--layout-padding);
+    background-color: var(--color-gray-300);
+    box-shadow: var(--layout-shadow);
+    color: var(--color-text);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border-light);
+
+}
+
+/* ___ end - layout ________________________________________ #endregion'1'# */
