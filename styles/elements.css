@@ -59,20 +59,22 @@ header nav ul {
     margin: var(--layout-margin);
     background-color: var(--color-gray-200);
     border-radius: var(--radius-md);
-    box-shadow: var(--layout-shadow);
+    box-shadow: var(--shadow-inner);
 }
 
 header nav li {
     padding: var(--layout-padding);
     background-color: var(--color-gray-300);
-    color: orange;
+    background-image: url('../assets/buttons/Button_1.png');
+    background-size: 100% 100%;
+    color: hsla(0, 0%, 50%, 0.5);
     font-family: var(--font-family-nav);
     font-size: var(--font-size-md);
     font-weight: var(--font-weight-semibold);
     text-transform: uppercase;    
     text-shadow: 1px 1px 2px orangered;
     border-radius: var(--radius-md);
-    box-shadow: var(--layout-shadow);
+    box-shadow: var(--shadow-inner-4edge);
 }
 
 header nav li :hover {
@@ -81,3 +83,8 @@ header nav li :hover {
     text-shadow: 1px 1px 2px red, 1px 1px 5px orange;
 }
 
+header nav li :window-inactive {
+    background-color: var(--color-gray-100);
+    color: hsla(0, 0%, 50%, 0.5);
+    text-shadow: 1px 1px 2px red, 1px 1px 5px orange;
+}
